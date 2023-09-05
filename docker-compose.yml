@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  api:
+    image: dotnet:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: >
+      bash -c "dotnet ef database update && dotnet MyDockerApi.dll"
+    ports:
+      - "5000:80"  # Map host port 5000 to container port 80
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Specify the root password
+      MYSQL_DATABASE: TaskDb
+    ports:
+      - "3307:3306"  # Map host port 3307 to container port 3306
+
