@@ -1,5 +1,5 @@
 # MyDockerApi
-CRUD using dotnet 6 and mysql 8 to run in a simple dockerized enviroment.
+CRUD using dotnet 6 and mysql 8 to run in a simple dockerized environment.
 
 # Tools
 | Tool | Version |
@@ -18,7 +18,7 @@ docker-compose build
 docker-compose up
 ```
 ---
-Check if the containers are up and runing with the command ```docker ps```
+Check if the containers are up and running with the command ```docker ps```
 
 # Run migration
 Open your terminal in the project root directory (./MyDockerApi) and run the commands:
@@ -29,4 +29,4 @@ dotnet ef database update
 You can access the database via ```MySQL Workbench``` using the host ```localhost:3307``` and see that a table called 'Task' was created in TaskDb.
 
 # Test the API
-Now you can open your browser and access ```http://localhost:5000/swagger/index.html``` and test the CRUD operstions.
+Now you can open your browser and access ```http://localhost:5000/swagger/index.html``` and test the CRUD operations.
